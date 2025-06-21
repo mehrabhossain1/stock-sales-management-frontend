@@ -118,7 +118,7 @@ export function AppSidebar() {
                                     asChild
                                     isActive={isActive("/sales/dues")}
                                     className={`flex items-center gap-3 px-4 py-2 rounded-md transition-colors ${
-                                        isActive("/sales")
+                                        isActive("/sales/dues")
                                             ? "bg-gray-200 font-semibold"
                                             : "hover:bg-gray-100"
                                     }`}
