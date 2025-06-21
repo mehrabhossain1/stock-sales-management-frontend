@@ -1,54 +1,52 @@
-# React + TypeScript + Vite
+# 💻 Stock Sales Management Frontend (React + TS + Zustand)
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This is the **frontend** of the Stock & Sales Management System built with **React 19**, **TypeScript**, **Zustand**, **TailwindCSS 4**, **Vite**, and **Shadcn UI**.  
+Supports **JWT-based authentication**, **role-based dashboards**, and **protected routes** for `admin` and `manager`.
 
-Currently, two official plugins are available:
+---
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+## 🌐 Backend API
 
-## Expanding the ESLint configuration
+**Base URL:** [`https://stock-sales-management-backend.onrender.com`](https://stock-sales-management-backend.onrender.com)  
+Protected with **JWT** and **role-based access control**. Token is injected globally via Axios interceptor.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+---
 
-```js
-export default tseslint.config({
-  extends: [
-    // Remove ...tseslint.configs.recommended and replace with this
-    ...tseslint.configs.recommendedTypeChecked,
-    // Alternatively, use this for stricter rules
-    ...tseslint.configs.strictTypeChecked,
-    // Optionally, add this for stylistic rules
-    ...tseslint.configs.stylisticTypeChecked,
-  ],
-  languageOptions: {
-    // other options...
-    parserOptions: {
-      project: ['./tsconfig.node.json', './tsconfig.app.json'],
-      tsconfigRootDir: import.meta.dirname,
-    },
-  },
-})
-```
+## ✅ Features
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+-   🔐 Login with secure JWT token
+-   🛂 Role-based Dashboard (`admin`, `manager`)
+-   📦 Product Management (Admin)
+-   💸 Sales Tracking (Admin & Manager)
+-   📊 Dynamic Dashboard Stats (products, sales, due)
+-   ⚙️ Zustand-based Auth & Global State
+-   🖥️ Fully Responsive with TailwindCSS 4
+-   🧩 Modular folder structure and API integration
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+---
 
-export default tseslint.config({
-  plugins: {
-    // Add the react-x and react-dom plugins
-    'react-x': reactX,
-    'react-dom': reactDom,
-  },
-  rules: {
-    // other rules...
-    // Enable its recommended typescript rules
-    ...reactX.configs['recommended-typescript'].rules,
-    ...reactDom.configs.recommended.rules,
-  },
-})
+## 🏗️ Tech Stack
+
+### ⚙️ Frontend
+
+-   [React 19](https://react.dev/)
+-   [TypeScript](https://www.typescriptlang.org/)
+-   [Vite](https://vitejs.dev/)
+-   [Zustand](https://zustand-demo.pmnd.rs/)
+-   [React Hook Form](https://react-hook-form.com/)
+-   [Zod](https://zod.dev/)
+-   [Tailwind CSS v4](https://tailwindcss.com/)
+-   [Shadcn UI](https://ui.shadcn.dev/)
+-   [React Router v6](https://reactrouter.com/)
+-   [Axios](https://axios-http.com/)
+
+---
+
+## ⚙️ Project Setup
+
+```bash
+git clone https://github.com/mehrabhossain1/stock-sales-management-frontend
+cd stock-sales-management-frontend
+npm install
+npm run dev
 ```
