@@ -11,6 +11,7 @@ import { DashboardPage } from "@/pages/Dashboard";
 import { SalesPage } from "@/pages/Sales";
 import { StockPage } from "@/pages/Stock";
 import { ProtectedRoute } from "./ProtectedRoute";
+import { DueSalesPage } from "@/pages/DueSalesPage";
 
 export const router = createBrowserRouter([
     {
@@ -38,6 +39,14 @@ export const router = createBrowserRouter([
                 element: (
                     <ProtectedRoute allowedRoles={["admin", "manager"]}>
                         <SalesPage />
+                    </ProtectedRoute>
+                ),
+            },
+            {
+                path: "sales/dues",
+                element: (
+                    <ProtectedRoute allowedRoles={["admin", "manager"]}>
+                        <DueSalesPage />
                     </ProtectedRoute>
                 ),
             },

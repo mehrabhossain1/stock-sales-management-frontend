@@ -112,6 +112,28 @@ export function AppSidebar() {
                                     </Link>
                                 </SidebarMenuButton>
                             </SidebarMenuItem>
+
+                            <SidebarMenuItem>
+                                <SidebarMenuButton
+                                    asChild
+                                    isActive={isActive("/sales/dues")}
+                                    className={`flex items-center gap-3 px-4 py-2 rounded-md transition-colors ${
+                                        isActive("/sales")
+                                            ? "bg-gray-200 font-semibold"
+                                            : "hover:bg-gray-100"
+                                    }`}
+                                >
+                                    <Link
+                                        to="/sales/dues"
+                                        className="flex items-center gap-3"
+                                    >
+                                        <ShoppingCart className="h-5 w-5" />
+                                        <span className="text-sm font-medium">
+                                            Due Sales
+                                        </span>
+                                    </Link>
+                                </SidebarMenuButton>
+                            </SidebarMenuItem>
                         </SidebarMenu>
                     </SidebarGroupContent>
                 </SidebarGroup>
