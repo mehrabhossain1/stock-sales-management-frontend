@@ -1,7 +1,7 @@
 import axios from "axios";
 
 const api = axios.create({
-    baseURL: "http://localhost:7001/api",
+    baseURL: "https://stock-sales-management-backend.onrender.com/api",
 });
 
 api.interceptors.request.use(
