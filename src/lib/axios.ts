@@ -15,4 +15,19 @@ api.interceptors.request.use(
     (error) => Promise.reject(error)
 );
 
+// 🔴 Auto logout on 401 Unauthorized
+api.interceptors.response.use(
+    (response) => response,
+    (error) => {
+        if (error.response?.status === 401 && typeof window !== "undefined") {
+            // 🚨 Token expired or invalid
+            localStorage.removeItem("user");
+            // 🚪 Redirect to login
+            window.location.href = "/login";
+        }
+
+        return Promise.reject(error);
+    }
+);
+
 export { api };

@@ -2,10 +2,6 @@ import { createBrowserRouter, Navigate } from "react-router-dom";
 
 import { RootLayout } from "@/components/layout/RootLayout";
 import LoginPage from "@/pages/LoginPage";
-// import UnauthorizedPage from "@/pages/UnauthorizedPage";
-// import ProtectedRoute from "./ProtectedRoute";
-// import AdminDashboard from "@/pages/AdminDashboard";
-// import ManagerDashboard from "@/pages/ManagerDashboard";
 
 import { DashboardPage } from "@/pages/Dashboard";
 import { SalesPage } from "@/pages/Sales";
@@ -58,34 +54,3 @@ export const router = createBrowserRouter([
         element: <LoginPage />,
     },
 ]);
-
-// export const router = createBrowserRouter([
-//     {
-//         path: "/login",
-//         element: <LoginPage />,
-//     },
-//     {
-//         path: "/unauthorized",
-//         element: <UnauthorizedPage />,
-//     },
-//     {
-//         path: "/",
-//         element: <RootLayout />,
-//         children: [
-//             {
-//                 index: true,
-//                 element: <Navigate to="/dashboard" replace />,
-//             },
-//             {
-//                 element: <ProtectedRoute roles={["admin"]} />,
-//                 children: [{ path: "dashboard", element: <AdminDashboard /> }],
-//             },
-//             {
-//                 element: <ProtectedRoute roles={["manager"]} />,
-//                 children: [
-//                     { path: "dashboard", element: <ManagerDashboard /> },
-//                 ],
-//             },
-//         ],
-//     },
-// ]);
