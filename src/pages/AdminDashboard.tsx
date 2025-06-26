@@ -7,6 +7,7 @@ import {
     CardDescription,
 } from "@/components/ui/card";
 import { DollarSign, BarChart3, ShoppingCart } from "lucide-react";
+import { RevenueBarChart } from "@/components/RevenueBarChart";
 
 export function AdminDashboard() {
     const {
@@ -68,6 +69,8 @@ export function AdminDashboard() {
                     </CardContent>
                 </Card>
             </div>
+
+            <RevenueBarChart />
 
             <Card>
                 <CardHeader>

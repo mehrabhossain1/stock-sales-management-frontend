@@ -7,6 +7,7 @@ import {
     CardDescription,
 } from "@/components/ui/card";
 import { DollarSign, BarChart3, ShoppingCart } from "lucide-react";
+import { RevenueBarChart } from "@/components/RevenueBarChart";
 
 export function ManagerDashboard() {
     const {
@@ -16,14 +17,6 @@ export function ManagerDashboard() {
         recentActivities,
         loading,
     } = useManagerStats();
-
-    // if (totalRevenue === 0 && totalProducts === 0 && totalSales === 0) {
-    //     return (
-    //         <div className="text-center text-muted-foreground">
-    //             No data available. Start adding products and sales!
-    //         </div>
-    //     );
-    // }
 
     if (loading) return <div>Loading manager stats...</div>;
 
@@ -76,6 +69,8 @@ export function ManagerDashboard() {
                     </CardContent>
                 </Card>
             </div>
+
+            <RevenueBarChart />
 
             <Card>
                 <CardHeader>
