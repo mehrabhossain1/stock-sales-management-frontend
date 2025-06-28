@@ -1,7 +1,11 @@
 import axios from "axios";
 
+const baseURL = import.meta.env.DEV
+    ? import.meta.env.VITE_API_BASE_URL_LOCAL
+    : import.meta.env.VITE_API_BASE_URL;
+
 const api = axios.create({
-    baseURL: "https://stock-sales-management-backend.onrender.com/api",
+    baseURL,
 });
 
 api.interceptors.request.use(

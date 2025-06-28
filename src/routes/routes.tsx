@@ -1,6 +1,6 @@
-import { createBrowserRouter, Navigate } from "react-router-dom";
+import { createBrowserRouter } from "react-router-dom";
 
-import { RootLayout } from "@/components/layout/RootLayout";
+// import { RootLayout } from "@/components/layout/RootLayout";
 import LoginPage from "@/pages/LoginPage";
 
 import { DashboardPage } from "@/pages/Dashboard";
@@ -8,16 +8,18 @@ import { SalesPage } from "@/pages/Sales";
 import { StockPage } from "@/pages/Stock";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { DueSalesPage } from "@/pages/DueSalesPage";
+import Homepage from "@/pages/homepage/Homepage";
+import { ProductsPage } from "@/pages/productspage/ProductsPage";
 
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <RootLayout />,
+        element: <Homepage />,
         children: [
-            {
-                index: true,
-                element: <Navigate to="/dashboard" replace />,
-            },
+            // {
+            //     index: true,
+            //     element: <Navigate to="/dashboard" replace />,
+            // },
             {
                 path: "dashboard",
                 element: <DashboardPage />,
@@ -47,6 +49,10 @@ export const router = createBrowserRouter([
                 ),
             },
         ],
+    },
+    {
+        path: "/products",
+        element: <ProductsPage />,
     },
 
     {
