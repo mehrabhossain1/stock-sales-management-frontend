@@ -1,6 +1,6 @@
-import { createBrowserRouter } from "react-router-dom";
+import { createBrowserRouter, Navigate } from "react-router-dom";
 
-// import { RootLayout } from "@/components/layout/RootLayout";
+import { RootLayout } from "@/components/layout/RootLayout";
 import LoginPage from "@/pages/LoginPage";
 
 import { DashboardPage } from "@/pages/Dashboard";
@@ -15,12 +15,12 @@ import { ProductDetailPage } from "@/pages/productspage/ProductDetailPage";
 export const router = createBrowserRouter([
     {
         path: "/",
-        element: <Homepage />,
+        element: <RootLayout />,
         children: [
-            // {
-            //     index: true,
-            //     element: <Navigate to="/dashboard" replace />,
-            // },
+            {
+                index: true,
+                element: <Navigate to="/dashboard" replace />,
+            },
             {
                 path: "dashboard",
                 element: <DashboardPage />,
@@ -51,6 +51,46 @@ export const router = createBrowserRouter([
             },
         ],
     },
+
+    // Test route for homepage
+    // {
+    //     path: "/",
+    //     element: <Homepage />,
+    //     children: [
+    //         // {
+    //         //     index: true,
+    //         //     element: <Navigate to="/dashboard" replace />,
+    //         // },
+    //         {
+    //             path: "dashboard",
+    //             element: <DashboardPage />,
+    //         },
+    //         {
+    //             path: "stock",
+    //             element: (
+    //                 <ProtectedRoute allowedRoles={["admin", "manager"]}>
+    //                     <StockPage />
+    //                 </ProtectedRoute>
+    //             ),
+    //         },
+    //         {
+    //             path: "sales",
+    //             element: (
+    //                 <ProtectedRoute allowedRoles={["admin", "manager"]}>
+    //                     <SalesPage />
+    //                 </ProtectedRoute>
+    //             ),
+    //         },
+    //         {
+    //             path: "sales/dues",
+    //             element: (
+    //                 <ProtectedRoute allowedRoles={["admin", "manager"]}>
+    //                     <DueSalesPage />
+    //                 </ProtectedRoute>
+    //             ),
+    //         },
+    //     ],
+    // },
     {
         path: "/products",
         element: <ProductsPage />,
@@ -58,6 +98,11 @@ export const router = createBrowserRouter([
     {
         path: "/products/:id",
         element: <ProductDetailPage />,
+    },
+
+    {
+        path: "/dashboard",
+        element: <DashboardPage />,
     },
 
     {

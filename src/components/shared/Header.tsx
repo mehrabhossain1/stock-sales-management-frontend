@@ -1,16 +1,10 @@
 "use client";
-import { Bell, User } from "lucide-react";
+import { Bell } from "lucide-react";
 import { motion } from "framer-motion";
 import { Button } from "@/components/ui/button";
-import {
-    DropdownMenu,
-    DropdownMenuContent,
-    DropdownMenuItem,
-    DropdownMenuLabel,
-    DropdownMenuSeparator,
-    DropdownMenuTrigger,
-} from "@/components/ui/dropdown-menu";
+
 import { SidebarTrigger } from "@/components/ui/sidebar";
+import MyProfileButton from "./MyProfileButton";
 
 interface HeaderProps {
     isLoggedIn: boolean;
@@ -67,36 +61,7 @@ export function Header({
                 </Button>
 
                 {isLoggedIn ? (
-                    <DropdownMenu>
-                        <DropdownMenuTrigger asChild>
-                            <Button
-                                variant="ghost"
-                                size="icon"
-                                className="rounded-full"
-                            >
-                                <User className="h-5 w-5" />
-                                <span className="sr-only">Profile</span>
-                            </Button>
-                        </DropdownMenuTrigger>
-                        <DropdownMenuContent align="end">
-                            <DropdownMenuLabel>
-                                {/* {user?.name ?? "User"} */}
-                                <div className="text-xs text-muted-foreground">
-                                    {user?.role ?? ""}
-                                </div>
-                                <div className="text-xs text-muted-foreground">
-                                    {user?.email ?? ""}
-                                </div>
-                            </DropdownMenuLabel>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem>Profile</DropdownMenuItem>
-                            <DropdownMenuItem>Settings</DropdownMenuItem>
-                            <DropdownMenuSeparator />
-                            <DropdownMenuItem onClick={onLogout}>
-                                Logout
-                            </DropdownMenuItem>
-                        </DropdownMenuContent>
-                    </DropdownMenu>
+                    <MyProfileButton  onLogout={onLogout} />
                 ) : (
                     <Button onClick={onLogin}>Login</Button>
                 )}
