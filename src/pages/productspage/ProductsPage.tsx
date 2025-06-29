@@ -1,6 +1,7 @@
 // pages/ProductsPage.tsx
 import { useState } from "react";
 import { useProductsQuery } from "@/hooks/useProductsQuery";
+import { Link } from "react-router-dom";
 
 export function ProductsPage() {
     const [search, setSearch] = useState("");
@@ -31,16 +32,15 @@ export function ProductsPage() {
 
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {data?.products.map((product) => (
-                    <div
-                        key={product._id}
-                        className="border p-4 rounded shadow hover:shadow-md transition"
-                    >
-                        <h2 className="font-semibold">{product.name}</h2>
-                        <p className="text-sm text-muted-foreground">
-                            {product.description}
-                        </p>
-                        <p className="font-bold mt-2">৳{product.price}</p>
-                    </div>
+                    <Link to={`/products/${product._id}`} key={product._id}>
+                        <div className="border p-4 rounded shadow hover:shadow-md transition">
+                            <h2 className="font-semibold">{product.name}</h2>
+                            <p className="text-muted text-sm">
+                                {product.description}
+                            </p>
+                            <p className="font-bold mt-1">৳{product.price}</p>
+                        </div>
+                    </Link>
                 ))}
             </div>
 

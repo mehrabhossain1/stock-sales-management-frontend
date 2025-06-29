@@ -2,7 +2,7 @@
 import { useQuery } from "@tanstack/react-query";
 import { api } from "@/lib/axios";
 
-type Product = {
+export type Product = {
     _id: string;
     name: string;
     sku: string;

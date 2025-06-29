@@ -10,6 +10,7 @@ import { ProtectedRoute } from "./ProtectedRoute";
 import { DueSalesPage } from "@/pages/DueSalesPage";
 import Homepage from "@/pages/homepage/Homepage";
 import { ProductsPage } from "@/pages/productspage/ProductsPage";
+import { ProductDetailPage } from "@/pages/productspage/ProductDetailPage";
 
 export const router = createBrowserRouter([
     {
@@ -53,6 +54,10 @@ export const router = createBrowserRouter([
     {
         path: "/products",
         element: <ProductsPage />,
+    },
+    {
+        path: "/products/:id",
+        element: <ProductDetailPage />,
     },
 
     {
