@@ -8,9 +8,10 @@ import { SalesPage } from "@/pages/Sales";
 import { StockPage } from "@/pages/Stock";
 import { ProtectedRoute } from "./ProtectedRoute";
 import { DueSalesPage } from "@/pages/DueSalesPage";
-import Homepage from "@/pages/homepage/Homepage";
+// import Homepage from "@/pages/homepage/Homepage";
 import { ProductsPage } from "@/pages/productspage/ProductsPage";
 import { ProductDetailPage } from "@/pages/productspage/ProductDetailPage";
+import ProfilePage from "@/pages/ProfilePage";
 
 export const router = createBrowserRouter([
     {
@@ -103,6 +104,11 @@ export const router = createBrowserRouter([
     {
         path: "/dashboard",
         element: <DashboardPage />,
+    },
+
+    {
+        path: "/profile",
+        element: <ProfilePage />,
     },
 
     {
