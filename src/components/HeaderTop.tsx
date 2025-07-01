@@ -18,9 +18,9 @@ const socialLinks = [
 
 export function HeaderTop() {
     return (
-        <div className="bg-cultured border-b border-gray-200 py-2 text-sm">
+        <div className="bg-cultured border-b border-gray-200 py-0 text-xs">
             <div className="container mx-auto px-4">
-                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-4">
+                <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between ">
                     {/* Social Links */}
                     <ul className="flex items-center gap-4 justify-center lg:justify-start">
                         {socialLinks.map((social) => (

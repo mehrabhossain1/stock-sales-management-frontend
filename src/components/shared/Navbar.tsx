@@ -1,20 +1,10 @@
 "use client";
 
 import { useState } from "react";
-
 import { Search, ShoppingCart, Heart, User, Menu } from "lucide-react";
-
 import { Button } from "@/components/ui/button";
 import { Input } from "@/components/ui/input";
 import { Badge } from "@/components/ui/badge";
-import {
-    NavigationMenu,
-    NavigationMenuContent,
-    NavigationMenuItem,
-    NavigationMenuLink,
-    NavigationMenuList,
-    NavigationMenuTrigger,
-} from "@/components/ui/navigation-menu";
 import {
     DropdownMenu,
     DropdownMenuContent,
@@ -30,8 +20,10 @@ import {
     SheetTitle,
 } from "@/components/ui/sheet";
 import { cn } from "@/lib/utils";
-import { HeaderTop } from "../HeaderTop";
+
 import { Link } from "react-router-dom";
+import { HeaderTop } from "../HeaderTop";
+import { NavigationMenuComponent } from "./NavLinks";
 
 const navLinks = [
     { label: "Home", path: "/" },
@@ -94,7 +86,7 @@ export function Navbar() {
             <HeaderTop />
             <header className="sticky top-0 z-50 w-full border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
                 <div className="container mx-auto px-4">
-                    {/* Top bar */}
+                    {/* Main Header Row */}
                     <div className="flex h-16 items-center justify-between">
                         {/* Logo */}
                         <Link to="/" className="flex items-center space-x-2">
@@ -105,78 +97,6 @@ export function Navbar() {
                             </div>
                             <span className="text-xl font-bold">MyShop</span>
                         </Link>
-
-                        {/* Desktop Navigation */}
-                        <NavigationMenu className="hidden lg:flex">
-                            <NavigationMenuList>
-                                {navLinks.slice(0, 4).map((link) => (
-                                    <NavigationMenuItem key={link.path}>
-                                        <Link to={link.path}>
-                                            <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                                                {link.label}
-                                            </NavigationMenuLink>
-                                        </Link>
-                                    </NavigationMenuItem>
-                                ))}
-
-                                {/* Mega Menu */}
-                                <NavigationMenuItem>
-                                    <NavigationMenuTrigger>
-                                        Categories
-                                    </NavigationMenuTrigger>
-                                    <NavigationMenuContent>
-                                        <div className="grid w-[800px] grid-cols-4 gap-3 p-4">
-                                            {megaMenuCategories.map(
-                                                (category) => (
-                                                    <div
-                                                        key={category.title}
-                                                        className="space-y-3"
-                                                    >
-                                                        <h4 className="text-sm font-medium leading-none text-muted-foreground">
-                                                            {category.title}
-                                                        </h4>
-                                                        <ul className="space-y-2">
-                                                            {category.items.map(
-                                                                (item) => (
-                                                                    <li
-                                                                        key={
-                                                                            item.name
-                                                                        }
-                                                                    >
-                                                                        <Link
-                                                                            to={
-                                                                                item.href
-                                                                            }
-                                                                            className="block select-none space-y-1 rounded-md p-2 leading-none no-underline outline-none transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground"
-                                                                        >
-                                                                            <div className="text-sm font-medium leading-none">
-                                                                                {
-                                                                                    item.name
-                                                                                }
-                                                                            </div>
-                                                                        </Link>
-                                                                    </li>
-                                                                )
-                                                            )}
-                                                        </ul>
-                                                    </div>
-                                                )
-                                            )}
-                                        </div>
-                                    </NavigationMenuContent>
-                                </NavigationMenuItem>
-
-                                {navLinks.slice(4).map((link) => (
-                                    <NavigationMenuItem key={link.path}>
-                                        <Link to={link.path}>
-                                            <NavigationMenuLink className="group inline-flex h-9 w-max items-center justify-center rounded-md bg-background px-4 py-2 text-sm font-medium transition-colors hover:bg-accent hover:text-accent-foreground focus:bg-accent focus:text-accent-foreground focus:outline-none disabled:pointer-events-none disabled:opacity-50 data-[active]:bg-accent/50 data-[state=open]:bg-accent/50">
-                                                {link.label}
-                                            </NavigationMenuLink>
-                                        </Link>
-                                    </NavigationMenuItem>
-                                ))}
-                            </NavigationMenuList>
-                        </NavigationMenu>
 
                         {/* Search Bar */}
                         <div className="hidden md:flex flex-1 max-w-sm mx-4">
@@ -377,6 +297,11 @@ export function Navbar() {
                     </div>
                 </div>
             </header>
+
+            {/* Navigation Menu Row - Hidden on mobile, shown on desktop */}
+            <div className="hidden lg:block sticky top-16 z-40">
+                <NavigationMenuComponent />
+            </div>
         </>
     );
 }

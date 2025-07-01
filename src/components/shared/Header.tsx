@@ -61,7 +61,7 @@ export function Header({
                 </Button>
 
                 {isLoggedIn ? (
-                    <MyProfileButton  onLogout={onLogout} />
+                    <MyProfileButton onLogout={onLogout} />
                 ) : (
                     <Button onClick={onLogin}>Login</Button>
                 )}
