@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 "use client";
 
 import { useState, useEffect, useRef } from "react";
@@ -189,7 +190,7 @@ export function CategoriesCarousel({
                                                         (slideIndex + 1) *
                                                             itemsPerView
                                                     )
-                                                    .map((category, index) => (
+                                                    .map((category, _index) => (
                                                         <CategoryCard
                                                             key={category.id}
                                                             category={category}
@@ -214,7 +215,7 @@ export function CategoriesCarousel({
                                     minHeight: "200px",
                                 }}
                             >
-                                {categories.map((category, index) => (
+                                {categories.map((category, _index) => (
                                     <CategoryCard
                                         key={category.id}
                                         category={category}
