@@ -1,5 +1,6 @@
 import type { Product, FeaturedProduct } from "@/types/product";
 import type { Category } from "@/types/category";
+import type { Deal } from "@/types/deal";
 
 // Mock API functions - replace with your actual API calls
 export const fetchFeaturedProducts = async (): Promise<FeaturedProduct[]> => {
@@ -160,6 +161,71 @@ export const fetchCategories = async (): Promise<Category[]> => {
             slug: "toys-games",
             productCount: 340,
             color: "#14B8A6",
+        },
+    ];
+};
+
+export const fetchDealsOfTheDay = async (): Promise<Deal[]> => {
+    // Simulate API delay
+    await new Promise((resolve) => setTimeout(resolve, 900));
+
+    // Create end dates (some ending soon, some with more time)
+    const now = new Date();
+    const endDate1 = new Date(now.getTime() + 2 * 24 * 60 * 60 * 1000); // 2 days from now
+    const endDate2 = new Date(now.getTime() + 5 * 24 * 60 * 60 * 1000); // 5 days from now
+    const endDate3 = new Date(now.getTime() + 1 * 24 * 60 * 60 * 1000); // 1 day from now
+
+    return [
+        {
+            id: "deal-1",
+            title: "Premium Skincare Bundle Pack",
+            description:
+                "Complete skincare routine with shampoo, conditioner & facewash. Perfect for daily use with natural ingredients.",
+            image: "https://images.unsplash.com/photo-1556228720-195a672e8a03?w=500&h=500&fit=crop",
+            price: 150.0,
+            originalPrice: 200.0,
+            rating: 4.2,
+            maxRating: 5,
+            soldCount: 20,
+            availableCount: 40,
+            endDate: endDate1.toISOString(),
+            category: "Beauty & Health",
+            slug: "premium-skincare-bundle",
+            discount: 25,
+        },
+        {
+            id: "deal-2",
+            title: "Rose Gold Diamond Earrings",
+            description:
+                "Elegant rose gold earrings with premium diamonds. Perfect for special occasions and daily wear.",
+            image: "https://images.unsplash.com/photo-1515562141207-7a88fb7ce338?w=500&h=500&fit=crop",
+            price: 1990.0,
+            originalPrice: 2000.0,
+            rating: 4.8,
+            maxRating: 5,
+            soldCount: 15,
+            availableCount: 40,
+            endDate: endDate2.toISOString(),
+            category: "Jewelry",
+            slug: "rose-gold-diamond-earrings",
+            discount: 5,
+        },
+        {
+            id: "deal-3",
+            title: "Smart Home Security Camera",
+            description:
+                "Advanced security camera with night vision, motion detection, and mobile app control for complete home monitoring.",
+            image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=500&h=500&fit=crop",
+            price: 299.99,
+            originalPrice: 399.99,
+            rating: 4.6,
+            maxRating: 5,
+            soldCount: 35,
+            availableCount: 25,
+            endDate: endDate3.toISOString(),
+            category: "Electronics",
+            slug: "smart-security-camera",
+            discount: 25,
         },
     ];
 };

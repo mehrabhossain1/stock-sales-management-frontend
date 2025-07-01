@@ -26,7 +26,7 @@ export function HeroSection() {
     });
 
     return (
-        <section className="relative container mx-auto rounded-2xl px-10 min-h-[70vh] bg-gradient-to-br from-slate-50 to-slate-100 dark:from-slate-900 dark:to-slate-800 overflow-hidden">
+        <section className="relative container mx-auto rounded-2xl px-10 min-h-[70vh] bg-gradient-to-br from-primary/5 to-primary/10 dark:from-slate-900 dark:to-slate-800 overflow-hidden">
             {/* Background Image */}
             <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
@@ -84,7 +84,7 @@ export function HeroSection() {
                         </div>
 
                         {/* Featured Products Section */}
-                        <div className="space-y-3">
+                        <div className="space-y-3 lg:pb-10">
                             <h2 className="text-xl md:text-2xl font-semibold text-foreground">
                                 Featured Products
                             </h2>
