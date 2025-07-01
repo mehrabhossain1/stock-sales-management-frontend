@@ -1,4 +1,5 @@
 import type { Product, FeaturedProduct } from "@/types/product";
+import type { Category } from "@/types/category";
 
 // Mock API functions - replace with your actual API calls
 export const fetchFeaturedProducts = async (): Promise<FeaturedProduct[]> => {
@@ -87,6 +88,78 @@ export const fetchHighlightedProducts = async (): Promise<Product[]> => {
             category: "Electronics",
             rating: 4.3,
             discount: 25,
+        },
+    ];
+};
+
+export const fetchCategories = async (): Promise<Category[]> => {
+    // Simulate API delay
+    await new Promise((resolve) => setTimeout(resolve, 600));
+
+    return [
+        {
+            id: "1",
+            name: "Electronics",
+            image: "https://images.unsplash.com/photo-1498049794561-7780e7231661?w=300&h=300&fit=crop",
+            slug: "electronics",
+            productCount: 1250,
+            color: "#3B82F6",
+        },
+        {
+            id: "2",
+            name: "Fashion",
+            image: "https://images.unsplash.com/photo-1445205170230-053b83016050?w=300&h=300&fit=crop",
+            slug: "fashion",
+            productCount: 890,
+            color: "#EC4899",
+        },
+        {
+            id: "3",
+            name: "Home & Garden",
+            image: "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?w=300&h=300&fit=crop",
+            slug: "home-garden",
+            productCount: 650,
+            color: "#10B981",
+        },
+        {
+            id: "4",
+            name: "Sports & Fitness",
+            image: "https://images.unsplash.com/photo-1571019613454-1cb2f99b2d8b?w=300&h=300&fit=crop",
+            slug: "sports-fitness",
+            productCount: 420,
+            color: "#F59E0B",
+        },
+        {
+            id: "5",
+            name: "Beauty & Health",
+            image: "https://images.unsplash.com/photo-1596462502278-27bfdc403348?w=300&h=300&fit=crop",
+            slug: "beauty-health",
+            productCount: 380,
+            color: "#8B5CF6",
+        },
+        {
+            id: "6",
+            name: "Books & Media",
+            image: "https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=300&h=300&fit=crop",
+            slug: "books-media",
+            productCount: 290,
+            color: "#EF4444",
+        },
+        {
+            id: "7",
+            name: "Automotive",
+            image: "https://images.unsplash.com/photo-1449965408869-eaa3f722e40d?w=300&h=300&fit=crop",
+            slug: "automotive",
+            productCount: 180,
+            color: "#6366F1",
+        },
+        {
+            id: "8",
+            name: "Toys & Games",
+            image: "https://images.unsplash.com/photo-1558060370-d644479cb6f7?w=300&h=300&fit=crop",
+            slug: "toys-games",
+            productCount: 340,
+            color: "#14B8A6",
         },
     ];
 };

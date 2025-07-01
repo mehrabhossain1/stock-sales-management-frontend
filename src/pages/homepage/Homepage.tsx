@@ -1,3 +1,4 @@
+import { CategoriesCarousel } from "@/components/CategoriesCarousel";
 import { HeroSection } from "@/components/HeroSection";
 import { Navbar } from "@/components/shared/Navbar";
 
@@ -28,6 +29,7 @@ export default function Homepage() {
                 </div>
             </main> */}
             <HeroSection />
+            <CategoriesCarousel />
             <div className="container mx-auto px-4 py-16">
                 <div className="text-center space-y-4">
                     <h2 className="text-3xl font-bold">More Content Below</h2>

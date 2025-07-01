@@ -44,13 +44,13 @@ body {
     --input: var(--border);
     --ring: var(--primary); */
     --radius: 0.5rem;
-    --background: oklch(1 0 0);
+    --background: oklch(98.74% 0.00317 15.262);
     --foreground: oklch(0.141 0.005 285.823);
     --card: oklch(1 0 0);
     --card-foreground: oklch(0.141 0.005 285.823);
     --popover: oklch(1 0 0);
     --popover-foreground: oklch(0.141 0.005 285.823);
-    --primary: oklch(0.606 0.25 292.717);
+    --primary: hsl(353, 100%, 78%);
     --primary-foreground: oklch(0.969 0.016 293.756);
     --secondary: oklch(0.967 0.001 286.375);
     --secondary-foreground: oklch(0.21 0.006 285.885);
@@ -201,4 +201,23 @@ body {
 
 .animate-slide-in {
     animation: slide-in 0.3s ease-out;
+}
+
+body::-webkit-scrollbar {
+    width: 15px;
+}
+
+body::-webkit-scrollbar-track {
+    background: var(--white);
+    border-left: 1px solid var(--cultured);
+}
+
+body::-webkit-scrollbar-thumb {
+    background: hsl(0, 0%, 80%);
+    border: 3px solid var(--white);
+    border-radius: 10px;
+}
+
+body::-webkit-scrollbar-thumb:hover {
+    background: hsl(0, 0%, 70%);
 }
