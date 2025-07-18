@@ -1,6 +1,7 @@
-import { CategoriesCarousel } from "@/components/CategoriesCarousel";
-import { DealOfTheDay } from "@/components/DealOfTheDay";
-import { HeroSection } from "@/components/HeroSection";
+// import { CategoriesCarousel } from "@/components/CategoriesCarousel";
+// import { DealOfTheDay } from "@/components/DealOfTheDay";
+// import { HeroSection } from "@/components/HeroSection";
+// import { ProductsSection } from "@/components/ProductsSection";
 import { Navbar } from "@/components/shared/Navbar";
 
 export default function Homepage() {
@@ -29,9 +30,10 @@ export default function Homepage() {
                     </div>
                 </div>
             </main> */}
-            <HeroSection />
-            <CategoriesCarousel />
-            <DealOfTheDay />
+            {/* <HeroSection /> */}
+            {/* <CategoriesCarousel /> */}
+            {/* <DealOfTheDay />
+            <ProductsSection />
             <div className="container mx-auto px-4 py-16">
                 <div className="text-center space-y-4">
                     <h2 className="text-3xl font-bold">More Content Below</h2>
@@ -53,7 +55,7 @@ export default function Homepage() {
                         ))}
                     </div>
                 </div>
-            </div>
+            </div> */}
         </div>
     );
 }

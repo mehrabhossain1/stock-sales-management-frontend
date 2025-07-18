@@ -1,17 +1,42 @@
 export interface Product {
-    id: string;
+    _id: string;
     name: string;
+    sku: string;
     price: number;
-    originalPrice?: number;
-    image: string;
-    category: string;
-    rating?: number;
-    isNew?: boolean;
+    quantity: number;
+    description: string;
+    tags?: string[];
+    // images?: string[];
     isFeatured?: boolean;
-    discount?: number;
+    isHot?: boolean;
+    averageRating?: number;
+    reviewCount?: number;
+    createdBy?: string;
+    reviews?: Review[];
+    createdAt?: string;
+    updatedAt?: string;
+    __v?: number;
+}
+
+export interface Review {
+    user: string;
+    rating: number;
+    comment: string;
+    _id: string;
+    createdAt: string;
+    updatedAt: string;
 }
 
 export interface FeaturedProduct extends Product {
     isFeatured: true;
-    description?: string;
+    discount?: number;
+}
+
+export interface ProductsResponse {
+    message: string;
+    count: number;
+    total: number;
+    page: number;
+    limit: number;
+    products: Product[];
 }
